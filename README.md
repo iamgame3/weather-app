@@ -1,4 +1,5 @@
 # Weather App (WIP)
+
 This project is meant to teach me how to use API keys as well as asynchronous JavaScript.
 
 Project functionality is undetermined at the moment.
