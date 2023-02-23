@@ -1,3 +1,3 @@
-import getWeatherData from './weather-info';
+import getWeatherData from "./weather-info";
 
-getWeatherData('Dubai');
+getWeatherData("Dubai");
