@@ -1,4 +1,5 @@
 const displayWeatherInfo = async (weatherData) => {
+  const body = document.querySelector("body");
   const title = document.querySelector(".title");
   const weather = document.querySelector(".weather");
   const temp = document.querySelector(".temp");
@@ -8,6 +9,27 @@ const displayWeatherInfo = async (weatherData) => {
   const cloud = document.querySelector(".cloud");
   title.textContent = `Weather Information For ${weatherData.city}`;
   weather.textContent = `Weather: ${weatherData.weather}`;
+  if (weatherData.weather === "Clear") body.style.backgroundColor = "aqua";
+  if (
+    weatherData.weather === "Clouds" ||
+    weatherData.weather === "Drizzle" ||
+    weatherData.weather === "Mist" ||
+    weatherData.weather === "Haze" ||
+    weatherData.weather === "Dust" ||
+    weatherData.weather === "Fog" ||
+    weatherData.weather === "Sand"
+  )
+    body.style.backgroundColor = "lightgrey";
+  if (
+    weatherData.weather === "Rain" ||
+    weatherData.weather === "Thunderstorm" ||
+    weatherData.weather === "Smoke" ||
+    weatherData.weather === "Ash" ||
+    weatherData.weather === "Tornado"
+  )
+    body.style.backgroundColor = "grey";
+  if (weatherData.weather === "Snow" || weatherData.weather === "Squall")
+    body.style.backgroundColor = "whitesmoke";
   temp.textContent = `Temperature: ${Math.round(weatherData.temp - 273.15)}°C`;
   feels.textContent = `Feels Like: ${Math.round(weatherData.feels - 273.15)}°C`;
   wind.textContent = `Wind Speed: ${Math.round(weatherData.wind)} km/h`;

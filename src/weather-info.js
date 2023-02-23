@@ -12,12 +12,13 @@ const getLocationData = async (city) => {
   } catch (err) {
     cityError.textContent =
       "Sorry, that is either not a valid city/town or information for that area is not available.";
-    return [25.2653471, 55.2924914];
+    return null;
   }
 };
 
 const getWeatherData = async (city) => {
   const coords = await getLocationData(city);
+  if (coords === null) return;
   const lat = coords[0];
   const lon = coords[1];
   const rawWeatherData = await fetch(

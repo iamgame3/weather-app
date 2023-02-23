@@ -20,6 +20,10 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 5vh;
+  height: 90vh;
+  border-radius: 32px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .title {
@@ -71,8 +75,8 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 200px;
-  max-width: 200px;
+  min-width: 208px;
+  max-width: 208px;
   background-color: red;
   font-size: 12px;
 }
