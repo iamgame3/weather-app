@@ -1,8 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+input,
+label,
+button {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.title {
+  margin-top: 64px;
+  font-size: 50px;
+}
+
+.primary-info {
+  display: flex;
+  flex-direction: row;
+  gap: 128px;
+  margin-top: 124px;
+}
+
+.weather,
+.temp,
+.feels {
+  font-size: 42px;
+}
+
+.secondary-info {
+  display: flex;
+  flex-direction: row;
   gap: 64px;
-  height: 100vh;
+  margin-top: 64px;
+}
+
+.wind,
+.humidity,
+.cloud {
+  font-size: 24px;
+}
+
+.city-input-label {
+  margin-top: 256px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#city-input {
+  margin-top: 8px;
+  width: 200px;
+}
+
+.city-input-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 200px;
+  max-width: 200px;
+  background-color: red;
+  font-size: 12px;
+}
+
+.submit-button {
+  margin-top: 32px;
 }

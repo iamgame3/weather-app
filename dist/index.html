@@ -8,8 +8,23 @@
   </head>
   <body>
     <div class="container">
-      <input type="text" id="cityInput" />
-      <button class="submit">Submit</button>
+      <h1 class="title">Sample Text</h1>
+      <div class="primary-info">
+        <div class="weather">Snow</div>
+        <div class="temp">-9°C</div>
+        <div class="feels">-11°C</div>
+      </div>
+      <div class="secondary-info">
+        <div class="wind">22 km/h</div>
+        <div class="humidity">78%</div>
+        <div class="cloud">100%</div>
+      </div>
+      <label for="city-input" class="city-input-label">Search City/Town:</label>
+      <div class="input-container">
+        <input type="text" name="city-input" id="city-input" />
+        <span class="city-input-error"></span>
+      </div>
+      <button class="submit-button">Submit</button>
     </div>
     <script src="./main.js"></script>
   </body>
