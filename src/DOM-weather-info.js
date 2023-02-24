@@ -1,5 +1,7 @@
 import { cel } from "./temp-toggle";
 
+const submitButton = document.querySelector(".submit-button");
+
 const displayWeatherInfo = async (weatherData) => {
   const body = document.querySelector("body");
   const title = document.querySelector(".title");
@@ -50,6 +52,7 @@ const displayWeatherInfo = async (weatherData) => {
   wind.textContent = `Wind Speed: ${Math.round(weatherData.wind)} km/h`;
   humidity.textContent = `Humidity: ${weatherData.humidity}%`;
   cloud.textContent = `Cloud Cover: ${weatherData.cloud}%`;
+  submitButton.textContent = "Submit";
 };
 
 export default displayWeatherInfo;

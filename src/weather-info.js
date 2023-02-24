@@ -1,5 +1,7 @@
 import displayWeatherInfo from "./DOM-weather-info";
 
+const submitButton = document.querySelector(".submit-button");
+
 const getLocationData = async (city) => {
   const cityError = document.querySelector(".city-input-error");
   cityError.textContent = "";
@@ -10,6 +12,7 @@ const getLocationData = async (city) => {
     const locationData = await rawLocationData.json();
     return [locationData[0].lat, locationData[0].lon];
   } catch (err) {
+    submitButton.textContent = "Submit";
     cityError.textContent =
       "Sorry, that is either not a valid city/town or information for that area is not available.";
     return null;
@@ -17,6 +20,7 @@ const getLocationData = async (city) => {
 };
 
 const getWeatherData = async (city) => {
+  submitButton.textContent = "Loading...";
   const coords = await getLocationData(city);
   if (coords === null) return;
   const lat = coords[0];
