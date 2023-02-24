@@ -1,3 +1,5 @@
+import { cel } from "./temp-toggle";
+
 const displayWeatherInfo = async (weatherData) => {
   const body = document.querySelector("body");
   const title = document.querySelector(".title");
@@ -30,8 +32,21 @@ const displayWeatherInfo = async (weatherData) => {
     body.style.backgroundColor = "grey";
   if (weatherData.weather === "Snow" || weatherData.weather === "Squall")
     body.style.backgroundColor = "whitesmoke";
-  temp.textContent = `Temperature: ${Math.round(weatherData.temp - 273.15)}°C`;
-  feels.textContent = `Feels Like: ${Math.round(weatherData.feels - 273.15)}°C`;
+  if (cel) {
+    temp.textContent = `Temperature: ${Math.round(
+      weatherData.temp - 273.15
+    )}°C`;
+    feels.textContent = `Feels Like: ${Math.round(
+      weatherData.feels - 273.15
+    )}°C`;
+  } else {
+    temp.textContent = `Temperature: ${Math.round(
+      (weatherData.temp - 273.15) * (9 / 5) + 32
+    )}°F`;
+    feels.textContent = `Feels Like: ${Math.round(
+      (weatherData.feels - 273.15) * (9 / 5) + 32
+    )}°F`;
+  }
   wind.textContent = `Wind Speed: ${Math.round(weatherData.wind)} km/h`;
   humidity.textContent = `Humidity: ${weatherData.humidity}%`;
   cloud.textContent = `Cloud Cover: ${weatherData.cloud}%`;
